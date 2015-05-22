@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<medi:edimap xmlns:medi="http://www.milyn.org/schema/edi-message-mapping-1.2.xsd">
+     <medi:import truncatableSegments="true" truncatableFields="false" truncatableComponents="true" resource="edi-segment-definition.xml" namespace="def"/>
+
+	<medi:description name="Transaction Set" version="1.0" />
+
+	<medi:delimiters segment="&#126;" field="*" component="^" sub-component="" escape="?"/>
+
+	<medi:segments xmltag="Transaction-Set">
+
+        <medi:segment minOccurs="0" maxOccurs="1" segref="def:GS" segcode="GS" xmltag="Control-information"/> 
+        <medi:segment minOccurs="0" maxOccurs="1" segref="def:ST" segcode="ST" xmltag="Transaction-Set-Header"/>
+        <medi:segment minOccurs="0" maxOccurs="-1" segref="def:BEG" segcode="BEG" xmltag="Beginning-Segment-for-Purchase-Order"/>
+        <medi:segment minOccurs="0" maxOccurs="-1" segref="def:REF" segcode="REF" xmltag="Reference-Numbers"/>
+	</medi:segments>
+	
+</medi:edimap>

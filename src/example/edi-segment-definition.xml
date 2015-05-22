@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<medi:edimap xmlns:medi="http://www.milyn.org/schema/edi-message-mapping-1.2.xsd">
+<medi:description name="GS Segment Definition" version="1.0" />
+<medi:delimiters segment="&#126;" field="*" component="^" sub-component="~" escape="?"/>
+  <medi:segments xmltag="Transaction-Set">
+  <medi:segment segcode="GS" xmltag="control-information">
+  <medi:field xmltag="FunctionalIdentifierCode"/> 
+  <medi:field xmltag="ApplicationSendersCode"/>
+  <medi:field xmltag="ApplicationReceiversCode"/>
+  <medi:field xmltag="Date"/> 
+  <medi:field xmltag="Time"/>
+  <medi:field xmltag="GroupControlNumber"/>
+  <medi:field xmltag="ResponsibleAgencyCode"/>
+  <medi:field xmltag="VersionReleaseIndustryIdentifierCode"/> 
+</medi:segment>
+<medi:segment segcode="ST" xmltag="Transaction-Set-Header">
+  <medi:field xmltag="TransactionSetIdentifierCode"/>
+  <medi:field xmltag="TransactionSetControlNumber"/>
+  <medi:field xmltag="ImplementationConventionReference"/>
+</medi:segment>
+<medi:segment segcode="BEG" xmltag="Beginning-Segment-for-Purchase-Order">
+  <medi:field xmltag="TransactionSetPurposeCode"/>
+  <medi:field xmltag="PurchaseOrderTypeCode"/>
+  <medi:field xmltag="PurchaseOrderNumber"/>
+  <medi:field xmltag="ReleaseNumber"/>
+  <medi:field xmltag="PurchaseOrderDate"/>
+</medi:segment>
+
+<medi:segment segcode="REF" xmltag="Reference-Numbers">
+  <medi:field xmltag="ReferenceIdentificationQualifier" />
+  <medi:field xmltag="ReferenceIdentification"/>
+  <medi:field xmltag="Description"/>
+  <medi:field xmltag="ReferenceIdentifier"/>
+</medi:segment>
+  </medi:segments>
+</medi:edimap>
